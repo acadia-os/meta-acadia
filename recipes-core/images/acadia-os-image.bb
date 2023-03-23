@@ -6,5 +6,5 @@ IMAGE_LINGUAS = " "
 
 LICENSE = "MIT"
 
-inherit core-image-full-cmdline
+inherit core-image
 
