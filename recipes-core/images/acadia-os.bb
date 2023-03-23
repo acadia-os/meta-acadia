@@ -17,4 +17,4 @@ PACKAGE_INSTALL= "\
     ${ROOTFS_BOOTSTRAP_INSTALL} \
 "
 
-WKS_FILES ?= "acadia-os-cmx4.wks"
+WKS_FILES = "acadia-os-cmx4.wks"
