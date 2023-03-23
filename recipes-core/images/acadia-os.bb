@@ -8,3 +8,4 @@ LICENSE = "MIT"
 
 inherit core-image
 
+WKS_FILES ?= "acadia-os-cmx4.wks"
