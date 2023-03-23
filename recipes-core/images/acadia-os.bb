@@ -8,4 +8,13 @@ LICENSE = "MIT"
 
 inherit core-image
 
+PACKAGE_INSTALL= "\
+    base-files \
+    base-passwd \
+    busybox \
+    htop \
+    initscripts \
+    ${ROOTFS_BOOTSTRAP_INSTALL} \
+"
+
 WKS_FILES ?= "acadia-os-cmx4.wks"
