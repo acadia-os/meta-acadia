@@ -2,7 +2,7 @@ SUMMARY = "An example of partitioned image."
 
 SRC_URI = "file://${FILE_DIRNAME}/${BPN}.wks"
 
-IMAGE_INSTALL = "packagegroup-core-boot  packagegroup-core-ssh-openssh"
+IMAGE_INSTALL = "packagegroup-core-boot"
 
 IMAGE_FSTYPES = "wic"
 
