@@ -11,12 +11,18 @@ IMAGE_INSTALL = " \
     base-passwd \
     busybox \
     htop \
+    qt5-plugin-generic-vboxtouch \
+    openssh-sftp-server \
     psplash \
     initscripts \
     python3-flask \
     qtwebkit \
+    qtmqtt \
     chromium-x11 \
+    packagegroup-core-x11-xserver \
     packagegroup-core-ssh-openssh \
+    packagegroup-core-x11 \
+    packagegroup-core-x11-base \
     ${ROOTFS_BOOTSTRAP_INSTALL} \
 "
 
@@ -29,6 +35,6 @@ WKS_FILE_DEPENDS:append:x86-x32 = " syslinux-native syslinux"
 
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
-IMAGE_ROOTFS_EXTRA_SPACE = "2000"
+IMAGE_ROOTFS_EXTRA_SPACE = "4000"
 
 inherit image
