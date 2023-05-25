@@ -2,7 +2,23 @@ SUMMARY = "An example of partitioned image."
 
 SRC_URI = "file://${FILE_DIRNAME}/${BPN}.wks"
 
-IMAGE_INSTALL = "packagegroup-core-boot"
+IMAGE_INSTALL = " \
+    packagegroup-core-boot \
+    packagegroup-core-full-cmdline \
+    packagegroup-rpi-test \
+    packagegroup-core-x11-sato \
+    base-files \
+    base-passwd \
+    busybox \
+    htop \
+    psplash \
+    initscripts \
+    python3-flask \
+    qtwebkit \
+    chromium-x11 \
+    packagegroup-core-ssh-openssh \
+    ${ROOTFS_BOOTSTRAP_INSTALL} \
+"
 
 IMAGE_FSTYPES = "wic"
 
