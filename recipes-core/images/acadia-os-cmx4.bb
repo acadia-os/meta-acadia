@@ -18,6 +18,9 @@ IMAGE_INSTALL = " \
     python3-flask \
     qtwebkit \
     qtmqtt \
+    ntp \
+    ptpd \
+    xserver-xorg xinit xterm \
     chromium-x11 \
     packagegroup-core-x11-xserver \
     packagegroup-core-ssh-openssh \
@@ -38,3 +41,4 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384
 IMAGE_ROOTFS_EXTRA_SPACE = "4000"
 
 inherit image
+    
