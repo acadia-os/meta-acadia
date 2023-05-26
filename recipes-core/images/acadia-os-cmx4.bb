@@ -6,26 +6,22 @@ IMAGE_INSTALL = " \
     packagegroup-core-boot \
     packagegroup-core-full-cmdline \
     packagegroup-rpi-test \
-    packagegroup-core-x11-sato \
     base-files \
     base-passwd \
     busybox \
     htop \
-    qt5-plugin-generic-vboxtouch \
     openssh-sftp-server \
     psplash \
     initscripts \
+    packagegroup-core-x11 \
+    packagegroup-core-x11-base \
+    packagegroup-core-x11-xserver \
+    packagegroup-core-x11-sato \
     python3-flask \
-    qtwebkit \
-    qtmqtt \
     ntp \
     ptpd \
     xserver-xorg xinit xterm \
-    chromium-x11 \
-    packagegroup-core-x11-xserver \
     packagegroup-core-ssh-openssh \
-    packagegroup-core-x11 \
-    packagegroup-core-x11-base \
     ${ROOTFS_BOOTSTRAP_INSTALL} \
 "
 
@@ -38,7 +34,18 @@ WKS_FILE_DEPENDS:append:x86-x32 = " syslinux-native syslinux"
 
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
-IMAGE_ROOTFS_EXTRA_SPACE = "4000"
+IMAGE_ROOTFS_EXTRA_SPACE = "8000"
 
+DISTRO_FEATURES += "systemd"
+DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
+VIRTUAL-RUNTIME_init_manager = "systemd"
+VIRTUAL-RUNTIME_initscripts = "systemd-compat-units"
+INHERIT += "extrausers"
+EXTRA_USERS_PARAMS = " useradd sandesh; \
+                    useradd soccentric; \
+                    usermod  -p 'sandesh' sandesh; \
+                    usermod  -p 'soccentric' soccentric; \
+                    usermod  -a -G sudo sandesh; \
+                    usermod  -a -G sudo soccentric;"
 inherit image
     
