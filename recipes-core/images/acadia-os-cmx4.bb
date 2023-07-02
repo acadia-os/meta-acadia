@@ -13,10 +13,14 @@ IMAGE_INSTALL = " \
     openssh-sftp-server \
     psplash \
     initscripts \
+    python3-pychromecast \
+    nodejs \
+    can-utils cannelloni canutils libcanberra libsocketcan \
     packagegroup-core-x11 \
     packagegroup-core-x11-base \
     packagegroup-core-x11-xserver \
     packagegroup-core-x11-sato \
+    packagegroup-core-buildessential \
     python3-flask \
     ntp \
     ptpd \
@@ -36,10 +40,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384
 
 IMAGE_ROOTFS_EXTRA_SPACE = "8000"
 
-DISTRO_FEATURES += "systemd"
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
-VIRTUAL-RUNTIME_init_manager = "systemd"
-VIRTUAL-RUNTIME_initscripts = "systemd-compat-units"
+INIT_MANAGER = "systemd"
 INHERIT += "extrausers"
 EXTRA_USERS_PARAMS = " useradd sandesh; \
                     useradd soccentric; \
