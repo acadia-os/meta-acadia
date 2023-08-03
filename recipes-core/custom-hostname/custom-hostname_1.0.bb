@@ -7,10 +7,12 @@ SRC_URI = "file://hostname"
 S = "${WORKDIR}"
 
 do_install() {
+    install -d ${D}${sysconfdir}/
     install -m 0644 ${S}/hostname ${D}${sysconfdir}/hostname
 }
 
-FILES_${PN} = "${sysconfdir}/hostname"
+FILES_${PN} += "${sysconfdir}/hostname"
+INSANE_SKIP_${PN} += "installed-vs-shipped"
 
 # Ensure the package is installed in the final image
-IMAGE_INSTALL:append = " custom-hostname"
+#IMAGE_INSTALL:append = " custom-hostname"

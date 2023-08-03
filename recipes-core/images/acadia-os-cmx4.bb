@@ -2,7 +2,7 @@ SUMMARY = "An example of partitioned image."
 
 SRC_URI = "file://${FILE_DIRNAME}/${BPN}.wks"
 
-IMAGE_INSTALL = " \
+IMAGE_INSTALL += " \
     packagegroup-core-boot \
     packagegroup-core-full-cmdline \
     packagegroup-rpi-test \
@@ -10,6 +10,7 @@ IMAGE_INSTALL = " \
     base-passwd \
     busybox \
     htop \
+    can-utils canutils wpa-supplicant \
     openssh-sftp-server \
     psplash \
     initscripts \
@@ -19,9 +20,19 @@ IMAGE_INSTALL = " \
     packagegroup-core-x11-sato \
     python3-flask \
     ntp \
+    qtquick3d qtquickcontrols2 qtquicktimeline qtcharts qt5ledscreen qt5everywheredemo \
     ptpd \
+    nodejs \
+    chromium-x11 \
+    kiosk \
+    qt5everywheredemo  qtbase   qtdatavis3d \
+    qt5ledscreen \
+    libdnf \
+    cmake \
+    python3-pychromecast \
     xserver-xorg xinit xterm \
     packagegroup-core-ssh-openssh \
+    packagegroup-core-buildessential\ 
     ${ROOTFS_BOOTSTRAP_INSTALL} \
 "
 
@@ -36,16 +47,12 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384
 
 IMAGE_ROOTFS_EXTRA_SPACE = "8000"
 
-DISTRO_FEATURES += "systemd"
+INIT_MANAGER = "systemd"
+RASPBERRYPI_DISPLAY = "1"
+DISTRO_FEATURES += "systemd x11"
+IMAGE_INSTALL += " twm xterm xclock mtdev"
 DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 VIRTUAL-RUNTIME_initscripts = "systemd-compat-units"
-INHERIT += "extrausers"
-EXTRA_USERS_PARAMS = " useradd sandesh; \
-                    useradd soccentric; \
-                    usermod  -p 'sandesh' sandesh; \
-                    usermod  -p 'soccentric' soccentric; \
-                    usermod  -a -G sudo sandesh; \
-                    usermod  -a -G sudo soccentric;"
 inherit image
     

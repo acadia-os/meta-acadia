@@ -1,15 +1,14 @@
 [Unit]
 Description=Chromium Kiosk
-Wants=graphical.target
-After=graphical.target
+After=graphical-session.target
 
 [Service]
-User=your-user
-Group=your-group
+User=sandesh
+Group=sandesh
 Environment=DISPLAY=:0
 Environment=XAUTHORITY=/home/your-user/.Xauthority
 ExecStart=/usr/bin/chromium --noerrdialogs --kiosk --incognito https://www.embeddedone.com/
 Restart=on-abort
 
 [Install]
-WantedBy=graphical.target
+WantedBy=graphical-session.target
