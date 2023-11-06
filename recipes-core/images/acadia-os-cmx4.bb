@@ -29,6 +29,36 @@ IMAGE_INSTALL += " \
     qt5ledscreen \
     libdnf \
     cmake \
+	freetype \
+	init-ifupdown \
+	lua \
+	luafilesystem \
+	rescuegui \
+	swupdate-tools \
+	tekui \
+    parted \
+	ttf-dejavu-sans \
+	ttf-dejavu-sans-mono \
+	ttf-dejavu-common \
+	u-boot-fw-utils \
+	udev \
+    grpc \
+    protobuf \
+    protobuf-c \
+    base-files \
+    base-passwd \
+    busybox \
+    mtd-utils \
+    mtd-utils-ubifs \
+    libconfig \
+    e2fsprogs \
+    swupdate \
+    swupdate-www \
+        ${@bb.utils.contains('SWUPDATE_INIT', 'tiny', 'virtual/initscripts-swupdate', 'initscripts sysvinit', d)} \
+    util-linux-sfdisk \
+    base-files \
+	udev-extraconf \
+    swupdate \
     python3-pychromecast \
     xserver-xorg xinit xterm \
     packagegroup-core-ssh-openssh \
