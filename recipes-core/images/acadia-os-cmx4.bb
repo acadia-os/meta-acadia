@@ -14,19 +14,10 @@ IMAGE_INSTALL += " \
     openssh-sftp-server \
     psplash \
     initscripts \
-    packagegroup-core-x11 \
-    packagegroup-core-x11-base \
-    packagegroup-core-x11-xserver \
-    packagegroup-core-x11-sato \
     python3-flask \
     ntp \
-    qtquick3d qtquickcontrols2 qtquicktimeline qtcharts qt5ledscreen qt5everywheredemo \
     ptpd \
     nodejs \
-    chromium-x11 \
-    kiosk \
-    qt5everywheredemo  qtbase   qtdatavis3d \
-    qt5ledscreen \
     libdnf \
     cmake \
 	freetype \
